@@ -1,5 +1,2 @@
-*.bugv.io
-*.fonepay.com
-app.bugv.io
-offers.fonepay.com
-non-live.yakuza.com
+*.gamestop.com
+*.ups.com
