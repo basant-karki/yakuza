@@ -12,8 +12,9 @@ finished_alert(){
 
 }
 
-
 ffuf_fuzzer(){
+
+	echo "Fuzzing secret dicc and files...has started"
 
 	if find "dicc.txt"; then
 		mkdir ffuf-data
@@ -21,11 +22,12 @@ ffuf_fuzzer(){
 		finished_alert
 
 	else
-		
-		wget "https://bugera.000webhostapp.com/dicc.txt" -q
+
+		wget "https://bugera.000webhostapp.com/dicc.txt"
 		echo "Redirecting......to the same function again 0x0001"
 		sleep 1
 		ffuf_fuzzer #same function redirection
+		clear
 	fi
 
 }
@@ -37,7 +39,7 @@ kxss_for_xss_scanner(){
 	echo "kxss_for_xss_scanner has started..."
 	mkdir kxss
 	cat waybackdata/kxss_raw_urls.txt | kxss > kxss/kxss_suspected_urls.txt
-	finished_alert
+	ffuf_fuzzer
 
 }
 
